@@ -4,6 +4,29 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project uses
 [Semantic Versioning](https://semver.org/).
 
+## [2.3.0] — 2026-06-12
+
+### Added
+- **Per-app volume mixer** in the panel: set the volume of each app holding an
+  audio connection (CoreAudio process taps, macOS 14.4+). A live indicator marks
+  apps playing now; volumes persist per app; 100% is untouched passthrough
+- **Browser tabs are first-class in the switcher**: each Safari/Chrome/Edge/
+  Brave/Vivaldi tab is its own entry
+
+### Changed
+- **Switcher is instant**: a browser tab now raises its window immediately
+  instead of waiting on the tab-select script, and the panel only appears after
+  a short delay so quick flicks switch with no UI
+- **Tab-granular toggle**: the switcher tracks a most-recently-used order of
+  individual items, so ⌘Tab toggles between two tabs of the same browser just
+  like between two apps
+- The CPU/GPU/memory breakdown consolidates helper processes under their app
+  (one Safari row, not a dozen Web Content rows)
+
+### Removed
+- The quick-utilities panel section (hide desktop icons, show hidden files, turn
+  off display, eject disks, empty Trash)
+
 ## [2.1.0] — 2026-06-12
 
 ### Added

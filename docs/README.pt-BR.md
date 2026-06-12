@@ -37,16 +37,20 @@ sem analytics, sem chamadas de rede.
 ### 🪟 Alternador de janelas
 - Substitui o **⌘Tab** por uma grade com cada janela em miniatura ao vivo —
   não apenas ícones
-- Várias janelas do mesmo app aparecem individualmente
+- **Abas são tratadas como apps**: cada aba do Safari/Chrome/Edge/Brave/Vivaldi
+  é uma entrada própria, e o ⌘Tab alterna entre duas abas do mesmo navegador
+  como faria entre dois apps (ordem real de uso recente, no nível da aba)
+- Instantâneo: um toque rápido troca sem mostrar UI; a janela vem à frente na hora
 - Segure ⌘ e toque Tab para navegar; Shift/← volta; solte para trocar; **Q**
-  fecha o app selecionado; Esc cancela — segue a ordem real de uso recente,
-  fluido, animado, compatível com Mission Control e Spaces
+  fecha o app selecionado; Esc cancela — fluido, animado, compatível com Mission
+  Control e Spaces
 - Sem a Gravação de Tela, degrada graciosamente para ícones
 
-### 🧰 Utilidades
-- Ocultar ícones da mesa (apresentações, gravações)
-- Mostrar arquivos ocultos no Finder
-- Desligar a tela · Ejetar todos os discos · Esvaziar Lixeira (com confirmação)
+### 🎚️ Mixer de volume por app
+- Ajuste o volume de cada app individualmente — algo que o macOS não oferece
+  (process taps do CoreAudio, macOS 14.4+; nada é gravado)
+- Todo app com conexão de áudio aparece, com indicador ao vivo para os que estão
+  tocando; volumes persistem por app, e 100% = áudio intocado
 
 ## Instalação
 

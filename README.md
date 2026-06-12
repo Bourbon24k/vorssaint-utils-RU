@@ -43,16 +43,19 @@ analytics, no network calls.
 ### 🪟 Window switcher
 - Replaces **⌘Tab** with a grid showing every window as a live thumbnail —
   not just app icons
-- Multiple windows of the same app appear individually
+- **Browser tabs are first-class**: each Safari/Chrome/Edge/Brave/Vivaldi tab is
+  its own entry, and ⌘Tab toggles between two tabs of the same browser just like
+  between two apps (real most-recently-used order, at tab granularity)
+- Instant: a quick flick switches with no UI; the window raises immediately
 - Hold ⌘ and tap Tab to cycle; Shift/← goes back; release to switch; **Q** quits
-  the highlighted app; Esc cancels — follows the real most-recently-used order,
-  fluid, animated, Mission Control & Spaces friendly
+  the highlighted app; Esc cancels — fluid, animated, Mission Control & Spaces friendly
 - Falls back gracefully to app icons when Screen Recording is not granted
 
-### 🧰 Utilities
-- Hide desktop icons (presentations, recordings)
-- Show hidden files in Finder
-- Turn off the display · Eject all disks · Empty Trash (with confirmation)
+### 🎚️ Per-app volume mixer
+- Set each app's volume individually — something macOS doesn't offer
+  (CoreAudio process taps, macOS 14.4+; nothing is recorded)
+- Every app holding an audio connection appears, with a live indicator for the
+  ones playing now; volumes persist per app, and 100% = untouched audio
 
 ## Install
 
