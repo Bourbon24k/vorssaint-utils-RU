@@ -25,6 +25,13 @@ final class Permissions: ObservableObject {
         }
         timer.tolerance = 1
         RunLoop.main.add(timer, forMode: .common)
+        // Re-check the instant the user returns from System Settings, so a
+        // freshly granted permission reflects immediately instead of up to a
+        // tick later.
+        NotificationCenter.default.addObserver(forName: NSApplication.didBecomeActiveNotification,
+                                               object: nil, queue: .main) { [weak self] _ in
+            self?.refresh()
+        }
     }
 
     func refresh() {

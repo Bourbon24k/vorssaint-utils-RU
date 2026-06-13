@@ -256,6 +256,17 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSPopoverDelegate, NSW
         settingsWindow?.makeKeyAndOrderFront(nil)
     }
 
+    /// Quits and reopens the app. Full Disk Access only applies to a fresh
+    /// process, so this is how the uninstaller picks up a just-granted grant.
+    func relaunchApp() {
+        let path = Bundle.main.bundlePath
+        let task = Process()
+        task.executableURL = URL(fileURLWithPath: "/bin/sh")
+        task.arguments = ["-c", "sleep 0.3; /usr/bin/open \"\(path)\""]
+        try? task.run()
+        NSApp.terminate(nil)
+    }
+
     func showOnboarding(mode: OnboardingMode = .full) {
         closePopover()
         if let window = onboardingWindow {

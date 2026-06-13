@@ -84,8 +84,12 @@ struct UninstallerView: View {
                 .font(.caption2)
                 .foregroundStyle(.tertiary)
                 .fixedSize(horizontal: false, vertical: true)
-            Button(l10n.s.uninstallerFDAGrant) { permissions.requestFullDiskAccess() }
-                .controlSize(.small)
+            HStack(spacing: 8) {
+                Button(l10n.s.uninstallerFDAGrant) { permissions.requestFullDiskAccess() }
+                // Shown alongside because access only takes effect on relaunch.
+                Button(l10n.s.uninstallerFDARelaunch) { appDelegate()?.relaunchApp() }
+            }
+            .controlSize(.small)
         }
         .padding(11)
         .frame(width: 360)
