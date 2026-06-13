@@ -2,6 +2,7 @@ import AppKit
 import Carbon.HIToolbox
 import Combine
 import SwiftUI
+import UniformTypeIdentifiers
 
 /// A floating "shelf" that holds files, images, text and links you drop on it,
 /// to drag back out into any app later. It's summoned at the cursor by a global
@@ -163,22 +164,31 @@ final class ShelfService: ObservableObject {
 
     // MARK: - Items
 
+    /// Order matters for fidelity: a file is always a file, but a web image
+    /// drag carries both an image and its page URL — prefer the image, and
+    /// only fall back to treating a URL as a link when nothing richer exists.
     func accept(providers: [NSItemProvider]) -> Bool {
         var handled = false
         for provider in providers {
-            if provider.canLoadObject(ofClass: URL.self) {
+            if provider.hasItemConformingToTypeIdentifier(UTType.fileURL.identifier) {
                 handled = true
                 _ = provider.loadObject(ofClass: URL.self) { [weak self] url, _ in
-                    guard let url else { return }
-                    DispatchQueue.main.async {
-                        url.isFileURL ? self?.addFile(url) : self?.addLink(url)
-                    }
+                    guard let url, url.isFileURL else { return }
+                    DispatchQueue.main.async { self?.addFile(url) }
                 }
             } else if provider.canLoadObject(ofClass: NSImage.self) {
                 handled = true
                 _ = provider.loadObject(ofClass: NSImage.self) { [weak self] image, _ in
                     guard let image = image as? NSImage else { return }
                     DispatchQueue.main.async { self?.addImage(image) }
+                }
+            } else if provider.canLoadObject(ofClass: URL.self) {
+                handled = true
+                _ = provider.loadObject(ofClass: URL.self) { [weak self] url, _ in
+                    guard let url else { return }
+                    DispatchQueue.main.async {
+                        url.isFileURL ? self?.addFile(url) : self?.addLink(url)
+                    }
                 }
             } else if provider.canLoadObject(ofClass: NSString.self) {
                 handled = true
@@ -301,7 +311,7 @@ final class ShelfService: ObservableObject {
         view.layoutSubtreeIfNeeded()
         let size = view.fittingSize
         let mouse = NSEvent.mouseLocation
-        let screen = screenWithMouse().visibleFrame
+        let screen = NSScreen.withMouse.visibleFrame
         var x = mouse.x - size.width / 2
         var y = mouse.y - size.height - 16
         x = min(max(screen.minX + 8, x), screen.maxX - size.width - 8)
@@ -328,10 +338,5 @@ final class ShelfService: ObservableObject {
         panel.contentViewController = host
         self.panel = panel
         return panel
-    }
-
-    private func screenWithMouse() -> NSScreen {
-        let mouse = NSEvent.mouseLocation
-        return NSScreen.screens.first { $0.frame.contains(mouse) } ?? NSScreen.main ?? NSScreen.screens[0]
     }
 }
