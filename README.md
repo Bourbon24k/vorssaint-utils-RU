@@ -1,154 +1,170 @@
-# Vorssaint
+# Vorssaint (RU)
 
-> One small menu bar app that replaces a whole stack of paid Mac utilities.
+> Одно небольшое приложение в строке меню, заменяющее целую стопку платных утилит для Mac.
 
 <p align="center">
   <a href="https://vorssaint.com"><strong>vorssaint.com</strong></a>
 </p>
 
 <p align="center">
-  <a href="https://github.com/vorssaint/vorssaint-utils/releases"><img src="https://img.shields.io/github/v/release/vorssaint/vorssaint-utils?label=release" alt="Latest release"></a>
-  <a href="https://github.com/vorssaint/vorssaint-utils/actions/workflows/ci.yml"><img src="https://github.com/vorssaint/vorssaint-utils/actions/workflows/ci.yml/badge.svg?branch=main&event=push" alt="CI status"></a>
-  <a href="#what-you-need"><img src="https://img.shields.io/badge/macOS-14%2B%20(Apple%20Silicon)-black" alt="macOS 14 and newer, Apple Silicon"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/license-GPL%203.0%20or%20later-blue" alt="License GPL 3.0 or later"></a>
+  <a href="https://github.com/Bourbon24k/vorssaint-utils-RU/releases"><img src="https://img.shields.io/github/v/release/Bourbon24k/vorssaint-utils-RU?label=release" alt="Последний релиз"></a>
+  <a href="#что-понадобится"><img src="https://img.shields.io/badge/macOS-14%2B%20(Apple%20Silicon)-black" alt="macOS 14 и новее, Apple Silicon"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-GPL%203.0%20or%20later-blue" alt="Лицензия GPL 3.0 или новее"></a>
 </p>
 
-<p align="center"><sub>Também disponível em <a href="docs/README.pt-BR.md">Português (Brasil)</a>.</sub></p>
+<p align="center"><sub>Также доступно на <a href="https://github.com/vorssaint/vorssaint-utils#readme">English</a> · <a href="docs/README.pt-BR.md">Português (Brasil)</a>.</sub></p>
 
-Vorssaint is the one menu bar app that does the work of a whole shelf of paid Mac tools. Per app volume, a full system monitor, window controls, clipboard history, a window switcher, a file shelf, an app uninstaller, link cleaning, keep awake and a handful more, all living behind a single icon up in your menu bar. Install it once and stop paying for and juggling a pile of single purpose apps. It is local-first and stays out of your way: core features run on your Mac, with network used only for update checks, speed tests and Homebrew actions you start. Free, open source, no account, no subscription and no Vorssaint telemetry.
+> [!NOTE]
+> **Это неофициальный форк** оригинального проекта [vorssaint/vorssaint-utils](https://github.com/vorssaint/vorssaint-utils), в который добавлен **полный перевод интерфейса на русский язык**. Подробнее — в разделе [О форке](#о-форке). Официальные сборки выпускает только сопровождающий оригинального проекта.
 
-## Everything in one menu bar app
+Vorssaint — это единственное приложение в строке меню, которое делает работу целой полки платных инструментов для Mac. Громкость по приложениям, полноценный монитор системы, управление окнами, история буфера обмена, переключатель окон, полка для файлов, деинсталлятор приложений, очистка ссылок, режим «не засыпать» и ещё несколько функций — всё за одним значком в строке меню. Установите один раз и перестаньте платить за гору однозадачных программ и жонглировать ими. Приложение работает прежде всего локально и не мешает: основные функции выполняются на вашем Mac, а сеть используется только для проверки обновлений, теста скорости и действий Homebrew, которые вы сами запускаете. Бесплатно, с открытым исходным кодом, без аккаунта, без подписки и без телеметрии Vorssaint.
 
-Here is the whole toolkit. Every part can be turned on or off, so you keep what you use and hide the rest.
+## Всё в одном приложении строки меню
 
-### 🎚️ Per app volume, the one people reach for first
+Вот весь набор. Каждую часть можно включить или выключить, чтобы оставить нужное и скрыть остальное.
 
-Vorssaint puts a real mixer in your menu bar, so you can slide any single app up or down while the rest of your Mac stays exactly where it was. Mute a loud video and let your music keep playing. Lift a quiet call without turning everything else up. There is no extra audio driver to install and nothing to set up first.
+### 🎚️ Громкость по приложениям — то, к чему тянутся первым делом
 
-<p align="center"><img src="docs/assets/readme/volume-mixer.png" alt="Per app volume mixer" width="540"></p>
+Vorssaint помещает настоящий микшер в строку меню, чтобы вы могли убавить или прибавить любое отдельное приложение, пока остальная система остаётся как была. Заглушите громкое видео и оставьте музыку играть. Прибавьте тихий звонок, не повышая всё остальное. Не нужно устанавливать дополнительный аудиодрайвер и ничего не нужно настраивать заранее.
 
-On macOS 26 and newer the slider takes on the Liquid Glass look, and earlier versions of macOS keep the familiar one.
+<p align="center"><img src="docs/assets/readme/volume-mixer.png" alt="Микшер громкости по приложениям" width="540"></p>
 
-### 📊 See what your Mac is doing
+На macOS 26 и новее ползунок получает оформление Liquid Glass, а на более ранних версиях macOS сохраняет привычный вид.
 
-- **System monitor.** Follow CPU, GPU, memory, temperatures, battery details and uptime in one compact panel, with small history graphs and optional menu bar readouts.
-- **Monitor alerts.** Get optional notifications for sustained CPU load, high CPU temperature, critical memory pressure, low disk space and low battery.
-- **Network.** Watch live upload and download rates, the totals for your session, and a speed test you can run whenever you are curious.
-- **Power and battery.** Keep an eye on the system draw, the adapter input, the flow in and out of the battery, plus health, cycle count and which apps are burning real energy right now.
+### 📊 Видно, чем занят ваш Mac
 
-<p align="center"><img src="docs/assets/readme/system-monitor-graph.png" alt="System monitor with live graphs" width="460"></p>
+- **Монитор системы.** Следите за ЦП, ГП, памятью, температурами, деталями батареи и временем работы в одной компактной панели — с небольшими графиками истории и опциональными показателями прямо в строке меню.
+- **Оповещения монитора.** Опциональные уведомления о длительной загрузке ЦП, высокой температуре ЦП, критической нагрузке на память, нехватке места на диске и низком заряде.
+- **Сеть.** Смотрите текущие скорости отдачи и загрузки, итоги за сеанс и запускайте тест скорости, когда станет любопытно.
+- **Питание и батарея.** Следите за потреблением системы, входом адаптера, потоком в батарею и из неё, а также состоянием, числом циклов и тем, какие приложения прямо сейчас тратят реальную энергию.
 
-### 🪟 Move windows and files around
+<p align="center"><img src="docs/assets/readme/system-monitor-graph.png" alt="Монитор системы с живыми графиками" width="460"></p>
 
-- **Window switcher.** A richer spin on ⌘Tab with live thumbnails, including more than one window from the same app.
-- **Window Layout.** Move the active window to halves, corners, center or the usable screen with optional shortcuts.
-- **Shelf.** Park files, images, text and links near your cursor for a moment, then drag them wherever they belong later on.
-- **Finder cut and paste.** Use ⌘X and ⌘V to move selected files, while text fields keep their usual shortcuts.
-- **Quit on close.** Let an app quit when its last window closes, with exceptions for the apps you want to leave running.
-- **Green button maximizer.** An optional take on the green button that keeps the window in the current Space and puts it back to its old size on the next click.
-- **Clipboard history.** Keep a local text history with pinned items, search, manual ordering and quick paste shortcuts.
+### 🪟 Перемещайте окна и файлы
 
-<p align="center"><img src="docs/assets/readme/window-switcher.gif" alt="Window switcher with live thumbnails" width="460"></p>
+- **Переключатель окон.** Более богатая версия ⌘Tab с живыми миниатюрами, включая несколько окон одного приложения.
+- **Раскладка окон.** Перемещайте активное окно в половины, углы, центр или на рабочую область экрана с опциональными сочетаниями.
+- **Полка.** На время положите файлы, изображения, текст и ссылки рядом с курсором, а позже перетащите их туда, где они нужны.
+- **Вырезать и вставить в Finder.** Используйте ⌘X и ⌘V для перемещения выбранных файлов, при этом текстовые поля сохраняют свои привычные сочетания.
+- **Выход при закрытии.** Пусть приложение завершается, когда закрывается его последнее окно, с исключениями для программ, которые вы хотите оставить запущенными.
+- **Разворот зелёной кнопкой.** Опциональный вариант зелёной кнопки, который оставляет окно в текущем пространстве и возвращает прежний размер при следующем нажатии.
+- **История буфера обмена.** Локальная история текста с закреплёнными элементами, поиском, ручным порядком и сочетаниями для быстрой вставки.
 
-### ⚡ Keep your Mac awake
+<p align="center"><img src="docs/assets/readme/window-switcher.gif" alt="Переключатель окон с живыми миниатюрами" width="460"></p>
 
-Run a timer or stay up until you say stop. Closed lid mode is there for when you want the Mac to keep going with the screen down, and it stays opt in and tightly scoped so it never catches you off guard.
+### ⚡ Не давайте Mac засыпать
 
-<p align="center"><img src="docs/assets/readme/keep-awake-lid-closed.png" alt="Keep awake and closed lid controls" width="460"></p>
+Запустите таймер или оставайтесь активными, пока сами не скажете «стоп». Режим закрытой крышки нужен, когда Mac должен работать с опущенным экраном — он остаётся опциональным и строго ограниченным, чтобы никогда не застать врасплох.
 
-### 🧹 Tidy up and fine tune
+<p align="center"><img src="docs/assets/readme/keep-awake-lid-closed.png" alt="Управление режимом «не засыпать» и закрытой крышкой" width="460"></p>
 
-- **Uninstaller.** Drop an app onto Settings, look over the caches, preferences and logs it left around, then move them all to the Trash together.
-- **Clean URL.** Strip the tracking junk out of copied links, with an option to do it automatically.
-- **Cleaning Mode.** Lock the keyboard for a quick wipe down and unlock from the overlay or a repeated key tap.
-- **Scroll direction.** Flip the mouse wheel on its own without touching the trackpad and its natural scrolling.
-- **Fan Control beta.** A safe testing entry is in place, with the manual controls held back until each Mac model is checked out properly.
+### 🧹 Наводите порядок и тонко настраивайте
 
-### 🌍 Made to feel at home
+- **Деинсталлятор.** Перетащите приложение в «Настройки», просмотрите кэши, настройки и журналы, которые оно оставило, и переместите всё это в Корзину сразу.
+- **Очистка URL.** Удаляйте мусор отслеживания из скопированных ссылок, с опцией делать это автоматически.
+- **Режим очистки.** Заблокируйте клавиатуру для быстрой протирки и разблокируйте из оверлея или повторным нажатием клавиши.
+- **Направление прокрутки.** Инвертируйте колесо мыши отдельно, не затрагивая трекпад и его естественную прокрутку.
+- **Управление вентиляторами (бета).** Безопасная тестовая точка входа уже на месте, а ручное управление придержано, пока каждая модель Mac не будет проверена как следует.
 
-Vorssaint speaks eight languages and you can switch between them anytime in Settings. The compact panel lets you choose between a plain list and grouped sections, and you can tuck away the parts you rarely use, then bring them back from the same spot.
+### 🌍 Чувствует себя как дома
 
-## Install
+Vorssaint говорит на нескольких языках (включая **русский** в этом форке), и переключаться между ними можно в любой момент в Настройках. Компактная панель позволяет выбрать между простым списком и сгруппированными разделами, а редко используемые части можно убрать и вернуть из того же места.
 
-The easiest way is with [Homebrew](https://brew.sh).
+## Установка
+
+> [!IMPORTANT]
+> Homebrew-каск `vorssaint/tap/vorssaint` ниже устанавливает **официальную** сборку (на английском и других языках). Чтобы получить эту русскую сборку, скачайте её со [страницы релизов этого форка](https://github.com/Bourbon24k/vorssaint-utils-RU/releases) или соберите самостоятельно (см. [Сборка самостоятельно](#сборка-самостоятельно)).
+
+Самый простой способ установить официальную версию — через [Homebrew](https://brew.sh).
 
 ```sh
 brew install --cask vorssaint/tap/vorssaint
 ```
 
-Already running Vorssaint and you would rather not reinstall it? Adopt your current copy into Homebrew with no download.
+Уже используете Vorssaint и не хотите переустанавливать? Возьмите текущую копию под управление Homebrew без загрузки.
 
 ```sh
 brew install --cask --adopt vorssaint/tap/vorssaint
 ```
 
-From then on, updates arrive with `brew upgrade --cask vorssaint`. You can also grab the latest disk image from the [releases page](https://github.com/vorssaint/vorssaint-utils/releases), open it and drag Vorssaint into Applications.
+С этого момента обновления приходят через `brew upgrade --cask vorssaint`. Также можно взять последний образ диска со [страницы релизов](https://github.com/vorssaint/vorssaint-utils/releases), открыть его и перетащить Vorssaint в «Программы».
 
-Vorssaint is signed with an Apple Developer ID and notarized by Apple, so it opens with no security warning, and that stable signing identity holds on to the permissions you grant across updates.
+Официальный Vorssaint подписан Apple Developer ID и нотаризован Apple, поэтому открывается без предупреждения безопасности, и эта стабильная подпись сохраняет выданные вами разрешения между обновлениями.
 
-## Private by default
+## Конфиденциальность по умолчанию
 
-Vorssaint runs on your machine and asks for nothing it does not need. No account, no telemetry, no Vorssaint analytics and no tracking. It has no cloud dashboard and no Vorssaint backend. Network access is limited to visible features: update checks, the speed test and Homebrew searches, analytics and installs when you use the Homebrew manager. The whole story is written up in the [privacy notes](docs/PRIVACY.md).
+Vorssaint работает на вашей машине и не просит ничего лишнего. Никакого аккаунта, телеметрии, аналитики Vorssaint и отслеживания. У него нет облачной панели и нет бэкенда Vorssaint. Доступ к сети ограничен видимыми функциями: проверка обновлений, тест скорости, а также поиск, аналитика и установки Homebrew, когда вы пользуетесь менеджером Homebrew. Вся история описана в [заметках о конфиденциальности](docs/PRIVACY.md).
 
-Every macOS permission is optional, and the first run walks you through each one. A feature that is missing a permission simply stays quiet instead of breaking. Here is the short version, with the full picture in the [permissions guide](docs/PERMISSIONS.md).
+Каждое разрешение macOS опционально, и первый запуск проведёт вас по каждому из них. Функция без нужного разрешения просто молчит, а не ломается. Вот короткая версия, полная картина — в [руководстве по разрешениям](docs/PERMISSIONS.md).
 
-| Permission | Used by | Without it |
+| Разрешение | Используется для | Без него |
 |---|---|---|
-| Accessibility | Scroll direction, Window Layout, the switcher, Dock Preview, Finder cut and paste, quit on close | Those features stay off |
-| Screen Recording | Window titles and thumbnails in the switcher and Dock Preview | Previews fall back or stay unavailable |
-| System Audio Recording | Per app volume and output routing in the mixer | Apps stay on normal system audio |
-| Notifications | Keep awake, battery, Monitor and update alerts | The app stays silent |
-| Full Disk Access (optional) | A deeper uninstaller scan | It scans the reachable places only |
-| Administrator (once, optional) | Password free closed lid toggling | A password prompt on each toggle |
+| Универсальный доступ | Направление прокрутки, раскладка окон, переключатель, превью из Dock, вырезать и вставить в Finder, выход при закрытии | Эти функции остаются выключенными |
+| Запись экрана | Заголовки и миниатюры окон в переключателе и превью из Dock | Превью переключаются на запасной вариант или недоступны |
+| Запись системного звука | Громкость по приложениям и маршрутизация вывода в микшере | Приложения остаются на обычном системном звуке |
+| Уведомления | Оповещения «не засыпать», батареи, монитора и обновлений | Приложение молчит |
+| Полный доступ к диску (опционально) | Более глубокий анализ деинсталлятора | Анализируются только доступные места |
+| Администратор (один раз, опционально) | Переключение закрытой крышки без пароля | Запрос пароля при каждом переключении |
 
-Finder cut and paste, the uninstaller and Homebrew's Terminal handoff can also ask macOS for Automation access the first time they talk to Finder or Terminal. The shelf needs no permission at all.
+Вырезать и вставить в Finder, деинсталлятор и передача в Терминал у Homebrew также могут запросить у macOS доступ к Автоматизации при первом обращении к Finder или Терминалу. Полке не нужно никаких разрешений.
 
-## What you need
+## Что понадобится
 
-- A Mac with Apple Silicon
-- macOS 14 Sonoma or newer
-- Xcode Command Line Tools, only if you build it yourself
+- Mac с Apple Silicon
+- macOS 14 Sonoma или новее
+- Xcode Command Line Tools — только если вы собираете самостоятельно
 
-### Build it yourself
+### Сборка самостоятельно
 
 ```sh
-git clone https://github.com/vorssaint/vorssaint-utils.git
-cd vorssaint-utils
-./build.sh            # compile, generate the icon and assemble the signed bundle
-./build.sh --install  # the same, then install into Applications and launch
+git clone https://github.com/Bourbon24k/vorssaint-utils-RU.git
+cd vorssaint-utils-RU
+./build.sh            # компиляция, генерация значка и сборка подписанного бандла
+./build.sh --install  # то же самое, затем установка в «Программы» и запуск
 ```
 
-The [contributing guide](CONTRIBUTING.md) covers the layout and the conventions. Official Vorssaint builds come only from the maintainer. A fork has to use a different name, icon, bundle identity and signing identity, because the GPL covers the source code and not the Vorssaint name, logo or look. See [TRADEMARKS.md](TRADEMARKS.md).
+[Руководство для контрибьюторов](CONTRIBUTING.md) описывает структуру и соглашения. Официальные сборки Vorssaint выпускает только сопровождающий. Форк обязан использовать другое имя, значок, идентификатор бандла и подпись, потому что GPL покрывает исходный код, а не имя, логотип или внешний вид Vorssaint. См. [TRADEMARKS.md](TRADEMARKS.md).
 
-## Troubleshooting
+## О форке
 
-App blocked on first launch, a permission that will not take hold, or the switcher showing icons instead of thumbnails? The [troubleshooting guide](docs/TROUBLESHOOTING.md) walks through the common fixes, including how to reset permissions and remove the app cleanly.
+Это **неофициальный форк** проекта [vorssaint/vorssaint-utils](https://github.com/vorssaint/vorssaint-utils), созданный с одной целью — добавить **перевод интерфейса на русский язык**.
 
-## Uninstall
+- **Что изменено:** добавлена русская локализация (`Sources/Vorssaint/Core/Localizations/Strings+Russian.swift`) и подключена в систему языков. Русский появляется в списке языков в онбординге и в «Настройки › Основные», а также выбирается автоматически, если язык системы — русский.
+- **Связь с оригиналом:** весь остальной код, функции и поведение идентичны апстриму. Логику приложения этот форк не меняет.
+- **Сборки:** релизы здесь подписаны ad-hoc (без Apple Developer ID), поэтому при первом запуске macOS может показать предупреждение Gatekeeper — см. [руководство по устранению неполадок](docs/TROUBLESHOOTING.md). За официальными нотаризованными сборками идите в [оригинальный проект](https://github.com/vorssaint/vorssaint-utils/releases).
+- **Товарные знаки:** имя, логотип и внешний вид Vorssaint принадлежат их авторам. См. [TRADEMARKS.md](TRADEMARKS.md). Этот форк существует для удобства русскоязычных пользователей и не связан с командой Vorssaint.
+
+Перевод приветствуется в апстриме: если вы хотите, чтобы русский язык появился в официальном приложении, лучше всего предложить эти изменения через pull request в оригинальный репозиторий.
+
+## Устранение неполадок
+
+Приложение заблокировано при первом запуске, разрешение не применяется или переключатель показывает значки вместо миниатюр? [Руководство по устранению неполадок](docs/TROUBLESHOOTING.md) проводит по типичным решениям, включая сброс разрешений и чистое удаление приложения.
+
+## Удаление
 
 ```sh
 ./Tools/uninstall.sh
 ```
 
-The script quits the app, drops the login item, resets its privacy grants, deletes the app along with its preferences and saved state, and removes the optional closed lid rule, so nothing is left behind. You can also drag the app to the Trash and run `tccutil reset All com.vorssaint.utils` to clear its permissions.
+Скрипт завершает приложение, убирает элемент автозапуска, сбрасывает выданные разрешения, удаляет приложение вместе с настройками и сохранённым состоянием и убирает опциональное правило закрытой крышки, не оставляя следов. Также можно перетащить приложение в Корзину и выполнить `tccutil reset All com.vorssaint.utils`, чтобы сбросить его разрешения.
 
-## Documentation
+## Документация
 
-- [Privacy](docs/PRIVACY.md), what does and does not leave your Mac
-- [Permissions](docs/PERMISSIONS.md), every macOS permission in plain words
-- [Troubleshooting](docs/TROUBLESHOOTING.md), the common fixes
-- [Contributing](CONTRIBUTING.md), build, layout and conventions
-- [Support](SUPPORT.md), where to get help
-- [Security](SECURITY.md), how to report a vulnerability
+- [Конфиденциальность](docs/PRIVACY.md) — что покидает ваш Mac, а что нет
+- [Разрешения](docs/PERMISSIONS.md) — каждое разрешение macOS простыми словами
+- [Устранение неполадок](docs/TROUBLESHOOTING.md) — типичные решения
+- [Контрибьюторам](CONTRIBUTING.md) — сборка, структура и соглашения
+- [Поддержка](SUPPORT.md) — куда обращаться за помощью
+- [Безопасность](SECURITY.md) — как сообщить об уязвимости
 
-## Contributing
+## Вклад в проект
 
-Issues and pull requests are very welcome. The [contributing guide](CONTRIBUTING.md) has the build setup, the project conventions and how to add a translation or map the sensors on a new chip. For help, bug reports and feature ideas head to [support](SUPPORT.md), and to report something sensitive in private see the [security policy](SECURITY.md).
+Issues и pull requests очень приветствуются — желательно в [оригинальном проекте](https://github.com/vorssaint/vorssaint-utils). [Руководство для контрибьюторов](CONTRIBUTING.md) содержит настройку сборки, соглашения проекта и то, как добавить перевод или описать датчики нового чипа.
 
-## Support the project
+## Поддержать проект
 
-Vorssaint is free and it will stay that way. If it earns a place in your menu bar, a quick ⭐ helps other people find it. If you want to chip in beyond that you can [buy me a coffee](https://buymeacoffee.com/vorssaint), and either way the project lives on the community around it.
+Vorssaint бесплатен и таким останется. Если он займёт место в вашей строке меню, быстрая ⭐ помогает другим его найти. Если хотите поддержать сверх этого — можно [купить кофе автору оригинала](https://buymeacoffee.com/vorssaint); в любом случае проект живёт сообществом вокруг него.
 
-## License
+## Лицензия
 
-The source code is licensed under [GPL 3.0 or later](LICENSE), copyright 2026 Vorssaint. That license covers the source code. The Vorssaint name, logo and look are covered on their own in [TRADEMARKS.md](TRADEMARKS.md).
+Исходный код лицензирован под [GPL 3.0 или новее](LICENSE), copyright 2026 Vorssaint. Эта лицензия покрывает исходный код. Имя, логотип и внешний вид Vorssaint описаны отдельно в [TRADEMARKS.md](TRADEMARKS.md).
