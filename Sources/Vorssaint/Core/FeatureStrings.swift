@@ -5,19 +5,35 @@ import Foundation
 
 enum FeatureStrings {
     static func settingsCategories(_ language: AppLanguage) -> SettingsCategoryStrings {
-        language == .ptBR ? .ptBR : .enUS
+        switch language {
+        case .ptBR: return .ptBR
+        case .ru: return .ru
+        default: return .enUS
+        }
     }
 
     static func clipboard(_ language: AppLanguage) -> ClipboardFeatureStrings {
-        language == .ptBR ? .ptBR : .enUS
+        switch language {
+        case .ptBR: return .ptBR
+        case .ru: return .ru
+        default: return .enUS
+        }
     }
 
     static func windowLayout(_ language: AppLanguage) -> WindowLayoutFeatureStrings {
-        language == .ptBR ? .ptBR : .enUS
+        switch language {
+        case .ptBR: return .ptBR
+        case .ru: return .ru
+        default: return .enUS
+        }
     }
 
     static func monitorAlerts(_ language: AppLanguage) -> MonitorAlertFeatureStrings {
-        language == .ptBR ? .ptBR : .enUS
+        switch language {
+        case .ptBR: return .ptBR
+        case .ru: return .ru
+        default: return .enUS
+        }
     }
 }
 
@@ -32,6 +48,13 @@ struct SettingsCategoryStrings {
         windowsControls: "Janelas e controles",
         utilities: "Utilitários",
         app: "App"
+    )
+
+    static let ru = SettingsCategoryStrings(
+        essentials: "Основное",
+        windowsControls: "Управление окнами",
+        utilities: "Утилиты",
+        app: "Приложение"
     )
 
     static let enUS = SettingsCategoryStrings(
@@ -101,6 +124,37 @@ struct ClipboardFeatureStrings {
         noResults: "Nenhum resultado",
         newestFirst: "Mais recentes primeiro",
         active: "Guardando novos textos"
+    )
+
+    static let ru = ClipboardFeatureStrings(
+        title: "Буфер обмена",
+        enable: "Сохранять историю буфера обмена",
+        caption: "Хранит скопированный текст, чтобы использовать его позже. Всё остаётся на устройстве и может быть удалено в любой момент.",
+        localNote: "Сохраняется только текст. Изображения, файлы и слишком крупные элементы игнорируются.",
+        skipSensitive: "Пропускать текст, похожий на конфиденциальный",
+        skipSensitiveCaption: "Не сохраняет короткие строки без пробелов, похожие на пароли, токены или ключи.",
+        limit: "Лимит",
+        showInPanel: "Показывать в панели",
+        shortcut: "Сочетание для истории",
+        shortcutCaption: "Открывает быстрое окно с поиском, закреплёнными элементами и сочетаниями ⌘1–⌘9 для вставки в предыдущее приложение.",
+        shortcutHint: "В быстром окне: Enter вставляет первый элемент, ⌘1–⌘9 вставляют элементы, а кнопки элементов удаляют или меняют порядок.",
+        pinned: "Закреплённые",
+        recent: "Недавние",
+        pin: "Закрепить",
+        unpin: "Открепить",
+        clearRecent: "Очистить недавние",
+        clearAll: "Очистить незакреплённые",
+        empty: "Нет сохранённого текста",
+        disabled: "Включите историю, чтобы начать сохранять скопированный текст.",
+        search: "Искать скопированный текст",
+        copy: "Копировать",
+        copied: "Скопировано",
+        delete: "Удалить элемент",
+        moveUp: "Переместить вверх",
+        moveDown: "Переместить вниз",
+        noResults: "Ничего не найдено",
+        newestFirst: "Сначала новые",
+        active: "Сохраняет новый текст"
     )
 
     static let enUS = ClipboardFeatureStrings(
@@ -194,6 +248,36 @@ struct WindowLayoutFeatureStrings {
         restore: "Restaurar"
     )
 
+    static let ru = WindowLayoutFeatureStrings(
+        title: "Раскладка окон",
+        caption: "Перемещает активное окно в половины, углы, центр или на рабочую область экрана.",
+        showInPanel: "Показывать в панели",
+        shortcuts: "Сочетания клавиш",
+        shortcutsCaption: "Используйте глобальные сочетания, чтобы расставлять активное окно без открытия панели.",
+        permissionCaption: "Использует Универсальный доступ, чтобы перемещать только активное окно.",
+        noWindow: "Активное окно не найдено.",
+        missingPermission: "Предоставьте Универсальный доступ, чтобы перемещать окна.",
+        failed: "Не удалось переместить это окно.",
+        done: "Окно расставлено.",
+        restored: "Окно восстановлено.",
+        noRestore: "Нет предыдущей раскладки для восстановления.",
+        target: "Активное окно",
+        halves: "Половины",
+        corners: "Углы",
+        other: "Действия",
+        leftHalf: "Слева",
+        rightHalf: "Справа",
+        topHalf: "Сверху",
+        bottomHalf: "Снизу",
+        topLeft: "Верхний левый",
+        topRight: "Верхний правый",
+        bottomLeft: "Нижний левый",
+        bottomRight: "Нижний правый",
+        maximize: "Развернуть",
+        center: "По центру",
+        restore: "Восстановить"
+    )
+
     static let enUS = WindowLayoutFeatureStrings(
         title: "Window layout",
         caption: "Moves the active window to halves, corners, center or the usable screen.",
@@ -280,6 +364,35 @@ struct MonitorAlertFeatureStrings {
         diskBodyFormat: "%@ está com menos de %d%% livre.",
         batteryTitle: "Bateria baixa",
         batteryBodyFormat: "A bateria está em %d%%."
+    )
+
+    static let ru = MonitorAlertFeatureStrings(
+        section: "Оповещения",
+        caption: "По умолчанию выключено. Когда включено, Монитор предупреждает только при значимом состоянии и соблюдает интервал между оповещениями.",
+        cpu: "Высокая загрузка ЦП",
+        cpuTemperature: "Высокая температура ЦП",
+        memory: "Критическая нагрузка на память",
+        disk: "Мало места на диске",
+        battery: "Низкий заряд",
+        cpuThreshold: "ЦП выше",
+        cpuTemperatureThreshold: "Температура выше",
+        diskThreshold: "Свободно меньше",
+        batteryThreshold: "Заряд ниже",
+        cooldown: "Интервал между оповещениями",
+        cooldown5: "5 минут",
+        cooldown15: "15 минут",
+        cooldown30: "30 минут",
+        cooldown60: "1 час",
+        cpuTitle: "Высокая загрузка ЦП",
+        cpuBodyFormat: "ЦП был выше %d%% несколько секунд.",
+        cpuTemperatureTitle: "ЦП перегрелся",
+        cpuTemperatureBodyFormat: "ЦП достиг %d °C.",
+        memoryTitle: "Критическая память",
+        memoryBody: "Нагрузка на память достигла критического уровня.",
+        diskTitle: "Мало места на диске",
+        diskBodyFormat: "На %@ осталось меньше %d%% свободного места.",
+        batteryTitle: "Низкий заряд",
+        batteryBodyFormat: "Заряд батареи %d%%."
     )
 
     static let enUS = MonitorAlertFeatureStrings(
