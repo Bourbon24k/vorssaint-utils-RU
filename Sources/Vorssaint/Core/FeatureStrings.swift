@@ -264,7 +264,7 @@ struct WindowLayoutFeatureStrings {
 
     static let ru = WindowLayoutFeatureStrings(
         title: "Раскладка окон",
-        caption: "Перемещает активное окно в половины, углы, центр или на рабочую область экрана.",
+        caption: "Перемещает активное окно в половины, трети, углы, на другой дисплей, по центру или на рабочую область экрана.",
         showInPanel: "Показывать в панели",
         shortcuts: "Сочетания клавиш",
         shortcutsCaption: "Используйте глобальные сочетания, чтобы расставлять активное окно без открытия панели.",
@@ -277,18 +277,25 @@ struct WindowLayoutFeatureStrings {
         noRestore: "Нет предыдущей раскладки для восстановления.",
         target: "Активное окно",
         halves: "Половины",
+        thirds: "Трети",
         corners: "Углы",
         other: "Действия",
         leftHalf: "Слева",
         rightHalf: "Справа",
         topHalf: "Сверху",
         bottomHalf: "Снизу",
+        leftThird: "Левая 1/3",
+        centerThird: "Центральная 1/3",
+        rightThird: "Правая 1/3",
+        leftTwoThirds: "Левые 2/3",
+        rightTwoThirds: "Правые 2/3",
         topLeft: "Верхний левый",
         topRight: "Верхний правый",
         bottomLeft: "Нижний левый",
         bottomRight: "Нижний правый",
         maximize: "Развернуть",
         center: "По центру",
+        nextDisplay: "Следующий дисплей",
         restore: "Восстановить"
     )
 
